@@ -14,3 +14,6 @@
     Configure the import alias for utils: » @/lib/utils
     Are you using React Server Components? » no / yes
     Write configuration to components.json. Proceed? » yes
+
+-   Stuctured the folder
+    Created dashboard, landing route in app folder
