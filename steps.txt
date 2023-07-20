@@ -17,3 +17,13 @@
 
 -   Stuctured the folder
     Created dashboard, landing route in app folder
+
+-   Setup a Clerk account and create a new project as "neurogen-ai" 
+    Install Clerk into our App
+    Add Clerk API key to .env file
+    import and use ClerkProvider from "@clerk/nextjs"
+    Create middleware.ts file
+    Create Auth and Routes folder into app
+    Create Sign-in and Sign-up pages with the correct folder structure
+    update the .env file for signin and signup routes
+    Create a Layout file and Add the sign-in/up form styles in (auth) folder
