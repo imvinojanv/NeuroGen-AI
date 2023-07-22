@@ -27,3 +27,8 @@
     Create Sign-in and Sign-up pages with the correct folder structure
     update the .env file for signin and signup routes
     Create a Layout file and Add the sign-in/up form styles in (auth) folder
+    Successfully work the Clerk Auth
+
+-   Create layout.ts in the dashboard folder and Add Sidebar into layout
+-   Create Navbar page
+-   Updateing Sidebar and mobile sidebar
