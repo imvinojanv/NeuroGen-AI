@@ -38,3 +38,9 @@
 -   Create conversation UI
     Create a Heading component includes interface props
     Create a form components that use from Shadcn UI
+
+-   Conversation AI API configuration
+    Generate a OpenAI API and Add to .env
+    Create API folder path [app>api>conversation>route.ts]
+    API configuration in route.ts
+    install axios
