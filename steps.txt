@@ -32,3 +32,5 @@
 -   Create layout.ts in the dashboard folder and Add Sidebar into layout
 -   Create Navbar page
 -   Updateing Sidebar and mobile sidebar
+
+-   Update the dashboard page [app>(dashboard)>(routes)>dashboard>page.tsx]
