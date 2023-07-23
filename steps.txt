@@ -53,3 +53,12 @@
     Create a default instruction message, and pass it to OpenAI API through axios
     Can able to get the response feom GPT model, 
     Install react-markdown and format the code as readable snippet using markdown.
+
+-   Image Generation UI and API configuration
+    Copy the structure from coversation as image and modified some changes
+    change form structure in constants.ts
+    modify form field elements for taking amounts and resolutions
+    Copy the API structure from coversation api as image api
+    modify API requests as for image Generation
+    Create Image element UI
+    Solve a error with next.config.js
