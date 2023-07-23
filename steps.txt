@@ -44,3 +44,12 @@
     Create API folder path [app>api>conversation>route.ts]
     API configuration in route.ts
     install axios
+    make post axios request and get response from OpenAI
+    design the Loader, User avatar, and Bot avatar components (get the user data from @clerk/nextjs)
+
+-   Code Generation UI and API configuration
+    Copy the structure from coversation as code and modified some changes
+    Copy the API structure from coversation api as code api
+    Create a default instruction message, and pass it to OpenAI API through axios
+    Can able to get the response feom GPT model, 
+    Install react-markdown and format the code as readable snippet using markdown.
