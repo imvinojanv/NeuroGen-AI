@@ -61,4 +61,17 @@
     Copy the API structure from coversation api as image api
     modify API requests as for image Generation
     Create Image element UI
-    Solve a error with next.config.js
+    Solve a error with next.config.js 
+
+-   Music Generation UI and API configuration
+    Copy the structure from coversation as music and modified some changes
+    Copy the API structure from coversation api as music api
+    Create an account in Replicate AI and install Replicate into our project
+    modified route.ts page in api (Choose the Model from explore option in Replicate dashboad and select "riffusion" then Follow the API guide)
+    Design the UI in music/page.tsx
+    
+-   Video Generation UI and API configuration
+    Copy the structure from music as video and modified some changes
+    Copy the API structure from music api as video api
+    In the api/video/route.ts (Choose the Model from explore option in Replicate dashboad and select "zeroscope-v2-xl" then Follow the API guide)
+    Design the UI in video/page.tsx
