@@ -96,3 +96,16 @@
     in the dashboad>layout.tsx, Import the count and passed to Sidebar component
     In the Sidebar, Modify the interface to accept the apiLimitCount as a props
     Add UI for upgrade section
+
+-   Premium model UI
+    install zustand (npm i zustand)
+    Create a "hooks" folder in the root, and create a new file as "use-premium-model.tsx"
+    Add the structure of the model into use-premium-model.tsx
+    Create a model provider to run the model with any hydration errors
+    Create a PremiumModel component
+    import the PremiumModel component into app>layout.tsx
+    use the usePremiumModel into PremiumModel component
+    Install Dialog from Shadcn and use in Premium Model
+    Add onClick of upgrade button to show the dialog box
+    Add the usePremiumModel to all AI models to show upgrade box when crossed the API limits
+    Add the same functionalities to mobile-Navbar

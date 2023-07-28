@@ -18,10 +18,13 @@ import { Form, FormControl, FormField, FormItem } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+import { usePremiumModel } from '@/hooks/use-premium-model';
 
 import { formSchema } from './constants';
 
 const ConversationPage = () => {
+    const premiumModel = usePremiumModel();
+
     const router = useRouter();
     const [messages, setMessages] = useState<ChatCompletionRequestMessage[]>([]);
 
@@ -53,8 +56,9 @@ const ConversationPage = () => {
             // To clear the input field
             form.reset();
         } catch (error: any) {
-            // TODO: Open Pro Model
-            console.log(error);
+            if (error?.response?.status === 403) {
+                premiumModel.onOpen();
+            }
         } finally {
             // It's used to rehydrate all server components fetching the newest data
             // Once you do router.refresh() it doesn't really matter where you are, all the server components are goint to get refreshed with new data from the database

@@ -4,6 +4,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { Button } from "@/components/ui/button";
 import { MAX_FREE_COUNTS } from "@/constants";
+import { usePremiumModel } from "@/hooks/use-premium-model";
+
 import { Zap } from "lucide-react";
 
 interface FreeCounterProps {
@@ -13,6 +15,7 @@ interface FreeCounterProps {
 const FreeCounter = ({
     apiLimitCounter = 0
 }: FreeCounterProps) => {
+    const premiumModel = usePremiumModel();
     //  To prevent from any hydreation errors
     const [mounted, setMounted] = useState(false);
 
@@ -35,7 +38,7 @@ const FreeCounter = ({
                         value={(apiLimitCounter / MAX_FREE_COUNTS) * 100}
                     />
                 </div>
-                <Button className="w-full" variant="premium">
+                <Button onClick={premiumModel.onOpen} className="w-full" variant="premium">
                     Upgrade
                     <Zap className="w-4 h-4 ml-2 fill-white" />
                 </Button>

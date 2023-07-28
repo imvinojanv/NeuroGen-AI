@@ -19,10 +19,13 @@ import { Form, FormControl, FormField, FormItem } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+import { usePremiumModel } from '@/hooks/use-premium-model';
 
 import { formSchema } from './constants';
 
 const CodePage = () => {
+    const premiumModel = usePremiumModel();
+
     const router = useRouter();
     const [messages, setMessages] = useState<ChatCompletionRequestMessage[]>([]);
 
@@ -54,7 +57,9 @@ const CodePage = () => {
             // To clear the input field
             form.reset();
         } catch (error: any) {
-            // TODO: Open Pro Model
+            if (error?.response?.status === 403) {
+                premiumModel.onOpen();
+            }
             console.log(error);
         } finally {
             router.refresh();

@@ -14,10 +14,13 @@ import { Loader } from '@/components/loader';
 import { Form, FormControl, FormField, FormItem } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
+import { usePremiumModel } from '@/hooks/use-premium-model';
 
 import { formSchema } from './constants';
 
 const VideoPage = () => {
+    const premiumModel = usePremiumModel();
+
     const router = useRouter();
     const [video, setVideo] = useState<string>();
 
@@ -41,7 +44,9 @@ const VideoPage = () => {
             setVideo(response.data[0]);
             form.reset();
         } catch (error: any) {
-            // TODO: Open Pro Model
+            if (error?.response?.status === 403) {
+                premiumModel.onOpen();
+            }
             console.log(error);
         } finally {
             router.refresh();

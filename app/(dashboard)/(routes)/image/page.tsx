@@ -17,11 +17,13 @@ import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Card, CardFooter } from '@/components/ui/card';
-import { cn } from '@/lib/utils';
+import { usePremiumModel } from '@/hooks/use-premium-model';
 
 import { amountOptions, formSchema, resolutionOptions } from './constants';
 
 const ImagePage = () => {
+    const premiumModel = usePremiumModel();
+
     const router = useRouter();
     const [images, setImages] = useState<string[]>([]);
 
@@ -50,7 +52,9 @@ const ImagePage = () => {
             
             form.reset();
         } catch (error: any) {
-            // TODO: Open Pro Model
+            if (error?.response?.status === 403) {
+                premiumModel.onOpen();
+            }
             console.log(error);
         } finally {
             router.refresh();
