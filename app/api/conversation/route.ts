@@ -2,6 +2,8 @@ import { auth } from '@clerk/nextjs';
 import { NextResponse } from 'next/server';
 import { Configuration, OpenAIApi } from 'openai';
 
+import { increaseApiLimit, checkApiLimit } from '@/lib/api-limit';
+
 const configuration = new Configuration({
     apiKey: process.env.OPENAI_API_KEY,
 });
@@ -28,11 +30,20 @@ export async function POST(
             return new NextResponse("Messages are required", { status: 400 });
         }
 
-        // TODO: Implement logic to generate conversation responses based on the input message array and send it back
+        // Allow the user to use their free trail
+        const freeTrail = await checkApiLimit();
+
+        if (!freeTrail) {
+            return new NextResponse("You have reached your Free-Trail limit!", { status: 403 });
+        }
+
+        // If the user have Free-Trail, Allows to run this
         const response = await openai.createChatCompletion({
             model: 'gpt-3.5-turbo',
             messages
         });
+
+        await increaseApiLimit();
 
         return NextResponse.json(response.data.choices[0].message);
 
