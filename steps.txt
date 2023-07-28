@@ -89,3 +89,10 @@
     (To run and See the tables - npx prisma studio)
     Create a new file in "root" of the application as constants.ts, and add Limitation number variable
     Create a new file in "lib" as api-limit.ts
+    Create functions as increaseApiLimit, and checkApiLimit
+    Import the lib functions into app (coversation, code, ...) and make the limit as works
+
+-   Create another function as getApiLimitCount to show the available free credits
+    in the dashboad>layout.tsx, Import the count and passed to Sidebar component
+    In the Sidebar, Modify the interface to accept the apiLimitCount as a props
+    Add UI for upgrade section

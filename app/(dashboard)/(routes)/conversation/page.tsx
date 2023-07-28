@@ -56,6 +56,9 @@ const ConversationPage = () => {
             // TODO: Open Pro Model
             console.log(error);
         } finally {
+            // It's used to rehydrate all server components fetching the newest data
+            // Once you do router.refresh() it doesn't really matter where you are, all the server components are goint to get refreshed with new data from the database
+            // This effect can feel on API Limits count Rendering
             router.refresh();
         }
     };

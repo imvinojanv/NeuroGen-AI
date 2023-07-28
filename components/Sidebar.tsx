@@ -1,3 +1,4 @@
+// It's a Client component
 "use client";
 
 import Image from 'next/image';
@@ -16,6 +17,7 @@ import {
 } from "lucide-react";
 
 import { cn } from '@/lib/utils';
+import FreeCounter from '@/components/free-counter';
 
 const montserrat = Montserrat({
     weight: "600",
@@ -64,9 +66,15 @@ const routes = [
         icon: Settings,
         href: "/settings",
     },
-]
+];
 
-function Sidebar() {
+interface SidebarProps {
+    apiLimitCount: number;
+}
+
+function Sidebar({
+    apiLimitCount = 0       // Accept apiLimitCount as a props
+}: SidebarProps) {
     const pathname = usePathname();
 
   return (
@@ -103,8 +111,11 @@ function Sidebar() {
                 ))}
             </div>
         </div>
+        <FreeCounter 
+            apiLimitCounter={apiLimitCount}
+        />
     </div>
-  )
+  );
 }
 
 export default Sidebar
