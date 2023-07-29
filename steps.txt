@@ -85,7 +85,7 @@
     Install Prisma client (npm i @prisma/client) 
     Create a new file in lib folder as prismadb.ts, and add PrismaClient configuration
     Create UserApiLimit model in schema.prisma
-    push the prisma db (npx prisma db push & npx prisma generate)   --> Every time you have you push and generate when you modified "schema.prisma"
+    push the prisma db (npx prisma generate & npx prisma db push)   --> Every time you have you push and generate when you modified "schema.prisma"
     (To run and See the tables - npx prisma studio)
     Create a new file in "root" of the application as constants.ts, and add Limitation number variable
     Create a new file in "lib" as api-limit.ts
@@ -109,3 +109,13 @@
     Add onClick of upgrade button to show the dialog box
     Add the usePremiumModel to all AI models to show upgrade box when crossed the API limits
     Add the same functionalities to mobile-Navbar
+
+-   Create and Setup an account on Stripe 
+    Get an API key and paste it into .env
+    install stripe (npm i stripe)
+    create stripe.ts file in "lib"
+    update schema.prisma for Stripe
+    update lib>utils.ts file with absoluteUrl function for NEXT_PUBLIC_APP_URL
+    Create app>api>stripe>route.ts and import dependancies
+    do the stripe checkout page in route.ts
+    Create a webhook for our Stripe (Create a file app>api>webhook>route.ts) and update with that 2 events of subsription
