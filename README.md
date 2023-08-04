@@ -23,8 +23,9 @@ stripe login
 stripe listen --forward-to localhost:3000/api/webhook
 ```
 
-Application frontend : [http://localhost:3000](http://localhost:3000)
-Prisma Studio : [http://localhost:5555](http://localhost:5555)
+Application frontend : [http://localhost:3000](http://localhost:3000) <br>
+Prisma Studio : [http://localhost:5555](http://localhost:5555) <br>
+Crisp dashboard : [https://app.crisp.chat](https://app.crisp.chat/)
 
 
 # Next 13 App
