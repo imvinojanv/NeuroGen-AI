@@ -119,3 +119,16 @@
     Create app>api>stripe>route.ts and import dependancies
     do the stripe checkout page in route.ts
     Create a webhook for our Stripe (Create a file app>api>webhook>route.ts) and update with that 2 events of subsription
+    Generate STRIPE_WEBHOOK_SECRET key for Test in local environment and create a valiable in .env file
+    Connect our "Upgrade" button to show the scripe payment or billing details. (components>premium-model.tsx)
+    for getting the 401 error with stripe api (Not authenticated), to this have to add clerk middleware for /api/webhook
+
+    Create a lib>subscription.ts to check the user subscribed or not. (we also have to check the expired date as well)
+    Develop the Settings page with manage subscription button and upgrade button
+    Fixed : Error: 'You can’t create a portal session in test mode until you save your customer portal settings in test mode at https://dashboard.stripe.com/test/settings/billing/portal.',
+    Provide the premium plan features when user subscribed (Allow unlimited generations)
+    Add the modifications on free-couter.tsx, sidebar.tsx, (dashboad)>layout.tsx, Navbar.tsx and mobile-sidebar.tsx
+    Go through the individual route and Fix the generation problem (Allow unlimited generation)
+        api>conversation>route>route
+        Copy to other individual routes (code, Image, ....)
+    

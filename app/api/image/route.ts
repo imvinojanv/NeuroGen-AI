@@ -3,6 +3,7 @@ import { NextResponse } from 'next/server';
 import { Configuration, OpenAIApi } from 'openai';
 
 import { increaseApiLimit, checkApiLimit } from '@/lib/api-limit';
+import { checkSubscription } from '@/lib/subscription';
 
 const configuration = new Configuration({
     apiKey: process.env.OPENAI_API_KEY,
@@ -40,8 +41,10 @@ export async function POST(
 
         // Allow the user to use their free trail
         const freeTrail = await checkApiLimit();
+        // Allow the user to use thier premium plan
+        const isPremium = await checkSubscription();
 
-        if (!freeTrail) {
+        if (!freeTrail && !isPremium) {
             return new NextResponse("You have reached your Free-Trail limit!", { status: 403 });
         }
 
@@ -52,7 +55,9 @@ export async function POST(
             size: resolution,
         });
 
-        await increaseApiLimit();
+        if (!isPremium) {
+            await increaseApiLimit();
+        }
 
         return NextResponse.json(response.data.data);
 

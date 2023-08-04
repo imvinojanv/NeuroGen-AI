@@ -10,10 +10,12 @@ import { Zap } from "lucide-react";
 
 interface FreeCounterProps {
     apiLimitCounter: number;
+    isPremium: boolean;
 }
 
 const FreeCounter = ({
-    apiLimitCounter = 0
+    apiLimitCounter = 0,
+    isPremium = false,
 }: FreeCounterProps) => {
     const premiumModel = usePremiumModel();
     //  To prevent from any hydreation errors
@@ -24,6 +26,9 @@ const FreeCounter = ({
     }, []);
 
     if (!mounted) return null;
+
+    // Allow to use premium features after subscribed
+    if (isPremium) return null;
 
   return (
     <div className="px-3">

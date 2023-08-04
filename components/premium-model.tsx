@@ -1,6 +1,8 @@
 "use client"
 
-import { Check, Code, ImageIcon, MessageSquare, MusicIcon, VideoIcon, Zap } from "lucide-react";
+import { useState } from "react";
+import axios from "axios";
+import { Check, Code, ImageIcon, MessageSquare, MusicIcon, VideoIcon, X, Zap } from "lucide-react";
 
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Badge } from "@/components/ui/badge";
@@ -44,6 +46,20 @@ const tools = [
 
 const PremiumModel = () => {
     const premiumModel = usePremiumModel();
+    const [loading, setLoading] = useState(false);
+
+    const onSubscribe = async () => {
+        try {
+            setLoading(true);
+            const response = axios.get("/api/stripe");
+
+            window.location.href = (await response).data.url;
+        } catch (error) {
+            console.log("STRIPE_CLIENT_ERROR", error);
+        } finally {
+            setLoading(false);
+        }
+    }
 
   return (
     <Dialog open={premiumModel.isOpen} onOpenChange={premiumModel.onClose}>
@@ -78,6 +94,7 @@ const PremiumModel = () => {
             </DialogHeader>
             <DialogFooter>
                 <Button
+                    onClick={onSubscribe}   
                     size="lg"
                     variant="premium"
                     className="w-full gap-1 text-md"
