@@ -133,8 +133,16 @@
         Copy to other individual routes (code, Image, ....)
     
 
--   Error Handling & Customer Support (Crisp)
+-   Error Handling toast
     install react-hot-toast
     create a component as toaster-provider.tsx
     Add toaster-provider to app>layout.tsx
     Add the toast message to all individual routes (code>page.tsx) and premium-model, subscription-button
+
+-   Customer Support with Crisp
+    Create an account on crisp.chat
+    Copy "CRISP_WEBSITE_ID" for the react integration. (Can integrate as using <script>, but here we are using another method for React)
+        install  crisp-sdk-web
+        Create a component as crisp-chat.tsx
+        Create a component as crisp-provider.tsx
+        Import CrispProvider to app>layout.tsx
