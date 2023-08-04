@@ -9,6 +9,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useRouter } from 'next/navigation';
 import { ChatCompletionRequestMessage } from 'openai';
 import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
+import { toast } from 'react-hot-toast';
 
 import { Heading } from "@/components/heading";
 import { Empty } from '@/components/empty';
@@ -59,6 +60,8 @@ const CodePage = () => {
         } catch (error: any) {
             if (error?.response?.status === 403) {
                 premiumModel.onOpen();
+            } else {
+                toast.error("Something went wrong!");
             }
             console.log(error);
         } finally {

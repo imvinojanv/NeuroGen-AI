@@ -3,6 +3,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { Check, Code, ImageIcon, MessageSquare, MusicIcon, VideoIcon, X, Zap } from "lucide-react";
+import { toast } from 'react-hot-toast';
 
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Badge } from "@/components/ui/badge";
@@ -55,6 +56,7 @@ const PremiumModel = () => {
 
             window.location.href = (await response).data.url;
         } catch (error) {
+            toast.error("Something went wrong!");
             console.log("STRIPE_CLIENT_ERROR", error);
         } finally {
             setLoading(false);
@@ -94,6 +96,7 @@ const PremiumModel = () => {
             </DialogHeader>
             <DialogFooter>
                 <Button
+                    disabled={loading}
                     onClick={onSubscribe}   
                     size="lg"
                     variant="premium"

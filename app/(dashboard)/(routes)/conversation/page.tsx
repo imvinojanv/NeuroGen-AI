@@ -8,6 +8,7 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useRouter } from 'next/navigation';
 import { ChatCompletionRequestMessage } from 'openai';
+import { toast } from 'react-hot-toast';
 
 import { Heading } from "@/components/heading";
 import { Empty } from '@/components/empty';
@@ -41,6 +42,8 @@ const ConversationPage = () => {
     const onSubmit = async (values: z.infer<typeof formSchema>) => {
         console.log(values);
         try {
+            // throw new Error("something")
+            
             const userMessage: ChatCompletionRequestMessage = {
                 role: 'user',
                 content: values.prompt,
@@ -58,6 +61,8 @@ const ConversationPage = () => {
         } catch (error: any) {
             if (error?.response?.status === 403) {
                 premiumModel.onOpen();
+            } else {
+                toast.error("Something went wrong!");
             }
         } finally {
             // It's used to rehydrate all server components fetching the newest data

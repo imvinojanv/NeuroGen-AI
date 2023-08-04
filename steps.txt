@@ -132,3 +132,9 @@
         api>conversation>route>route
         Copy to other individual routes (code, Image, ....)
     
+
+-   Error Handling & Customer Support (Crisp)
+    install react-hot-toast
+    create a component as toaster-provider.tsx
+    Add toaster-provider to app>layout.tsx
+    Add the toast message to all individual routes (code>page.tsx) and premium-model, subscription-button
