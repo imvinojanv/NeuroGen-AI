@@ -27,6 +27,14 @@ Application frontend : [http://localhost:3000](http://localhost:3000) <br>
 Prisma Studio : [http://localhost:5555](http://localhost:5555) <br>
 Crisp dashboard : [https://app.crisp.chat](https://app.crisp.chat/)
 
+## Prisma
+Every time you have you push and generate when you modified "schema.prisma"
+```bash
+npx prisma generate
+```
+```bash
+npx prisma db push
+```
 
 # Next 13 App
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
