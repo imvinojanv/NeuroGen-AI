@@ -146,3 +146,10 @@
         Create a component as crisp-chat.tsx
         Create a component as crisp-provider.tsx
         Import CrispProvider to app>layout.tsx
+
+-   Landing page design
+    Create layout.tsx file in (landing)
+    Create a component as landing-navbar.tsx
+    Create a component as landing-hero.tsx
+    install typewriter-effect for auto typing hero text
+    Create a component as landing-content.tsx
