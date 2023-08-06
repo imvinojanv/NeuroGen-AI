@@ -153,3 +153,5 @@
     Create a component as landing-hero.tsx
     install typewriter-effect for auto typing hero text
     Create a component as landing-content.tsx
+
+-   Redesign the application
