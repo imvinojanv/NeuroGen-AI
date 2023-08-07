@@ -85,7 +85,7 @@ const CodePage = () => {
                     <form
                         onSubmit={form.handleSubmit(onSubmit)}
                         className="
-                            rounded-lg border w-full p-4 px-3 md:px-6 focus-within:shadow-sm grid grid-cols-12 gap-2
+                            rounded-lg border border-[rgba(56,56,58,.6)] bg-[#202025] w-full p-4 px-3 md:px-6 focus-within:shadow-sm grid grid-cols-12 gap-2
                         "
                     >
                         <FormField
@@ -94,7 +94,7 @@ const CodePage = () => {
                                 <FormItem className='col-span-12 lg:col-span-10'>
                                     <FormControl className='m-0 p-0'>
                                         <Input 
-                                            className='border-0 outline-none focus-visible:ring-0 focus-visible:ring-transparent'
+                                            className='border-0 bg-[#202025] outline-none focus-visible:ring-0 focus-visible:ring-transparent'
                                             disabled={isLoading}
                                             placeholder='Simple toggle button using react hooks.'
                                             {...field}
@@ -112,7 +112,7 @@ const CodePage = () => {
             
             <div className='space-y-4 mt-4'>
                 {isLoading && (
-                    <div className='p-8 rounded-lg w-full flex items-center justify-center bg-muted'>
+                    <div className='p-8 rounded-lg w-full flex items-center justify-center bg-[#202025]'>
                         <Loader />
                     </div>
                 )}
@@ -127,7 +127,7 @@ const CodePage = () => {
                             key={message.content}
                             className={cn(
                                 "p-8 w-full flex items-start gap-x-8 rounded-lg",
-                                message.role === "user" ? "bg-white border border-black/10" : "bg-muted"
+                                message.role === "user" ? "border border-[rgba(56,56,58,.6)]" : "bg-[#202025]"
                             )}
                         >
                             {message.role === "user" ? <UserAvatar /> : <BotAvatar />}
@@ -135,16 +135,16 @@ const CodePage = () => {
                                 components={{
                                     // For Snippet box
                                     pre: ({ node, ...props }) => (
-                                        <div className='overflow-auto w-full my-2 bg-black/10 p-2 rounded-lg'>
+                                        <div className='overflow-auto w-full my-2 bg-[#171719] border border-[rgba(56,56,58,.6)] p-4 rounded-lg'>
                                             <pre {...props} />
                                         </div>
                                     ),
                                     // For code words
                                     code: ({ node, ...props }) => (
-                                        <code className='bg-black/10 rounded-lg p-1' {...props} />
+                                        <code className='bg-[#171719] border border-[rgba(56,56,58,.6)] rounded-lg py-1 px-2' {...props} />
                                     )
                                 }}
-                                className='text-sm overflow-hidden leading-7'
+                                className='text-md overflow-hidden leading-7'
                             >
                                 {message.content || ""}
                             </ReactMarkdown>

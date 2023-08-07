@@ -11,7 +11,7 @@ export const Loader = () => {
                 alt="logo"
             />
         </div>
-        <p className="text-sm text-muted-foreground">
+        <p className="text-sm text-[#6e6e76]">
             NeuroGen is thinking...
         </p>
     </div>

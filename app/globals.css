@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  /* color: #ceced2; */
+  color: #fff;
+  background-color: #202025;
+}
+
 html,
 body,
 :root {

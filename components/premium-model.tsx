@@ -65,12 +65,12 @@ const PremiumModel = () => {
 
   return (
     <Dialog open={premiumModel.isOpen} onOpenChange={premiumModel.onClose}>
-        <DialogContent>
+        <DialogContent className="bg-[#171719] border-white/10">
             <DialogHeader>
                 <DialogTitle className="flex justify-center items-center flex-col gap-y-4 pb-2">
                     <div className="flex items-center gap-x-2 font-bold py-1">
                         Upgade to NeuroGen
-                        <Badge variant="premium" className="uppercase text-sm py-1">
+                        <Badge variant="premium" className="uppercase border-none text-sm py-1 tracking-wider">
                             premium
                         </Badge>
                     </div>
@@ -79,13 +79,13 @@ const PremiumModel = () => {
                     {tools.map((tool) => (
                         <Card
                             key={tool.lable}
-                            className="p-3 border-black/5 flex items-center justify-between"
+                            className="p-3 bg-[#202025] border border-[rgba(56,56,58,.6)] flex items-center justify-between"
                         >
                             <div className="flex items-center gap-x-4">
                                 <div className={cn("p-2 w-fit rounded-md", tool.bgColor)}>
                                    <tool.icon className={cn("w-6 h-6", tool.color)} /> 
                                 </div>
-                                <div className="font-semibold text-sm">
+                                <div className="font-semibold text-sm text-white">
                                     {tool.lable}
                                 </div>
                             </div>

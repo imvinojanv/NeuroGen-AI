@@ -26,22 +26,31 @@ export const LandingNavbar = () => {
                         src="/logo.png"
                     />
                 </div>
-                <h1 className={cn("text-2xl md:text-3xl font-bold text-white", montserrat.className)}>
+                <h1 className={cn("text-2xl font-bold text-white", montserrat.className)}>
                     NeuroGen
                 </h1>
             </Link>
             <div className="flex items-center gap-x-2">
-                <Link href={isSignedIn ? '/dashboard' : '/sign-up'}>
-                    {isSignedIn ? 
+                {isSignedIn ? 
+                    <Link href='/dashboard'>
                         <Button variant='outline' className={cn("text-md rounded-full bg-transperant text-white md:px-8", montserrat.className)}>
                             Dashboard
                         </Button>
-                    : 
-                        <Button variant='outline' className={cn("text-md rounded-full md:px-8", montserrat.className)}>
-                            Get started
-                        </Button>
-                    }
-                </Link>
+                    </Link>
+                :
+                    <div className="flex items-center justify-center gap-4">
+                        <Link href='sign-in'>
+                            <Button variant='link' className={cn("text-md rounded-full bg-transperant text-white md:px-8", montserrat.className)}>
+                                Sign in
+                            </Button>
+                        </Link>
+                        <Link href='sign-up'>
+                            <Button variant='outline' className={cn("text-md rounded-full md:px-8 text-[#171719] border-nonen transition-all hover:bg-transparent hover:text-white", montserrat.className)}>
+                                Get started
+                            </Button>
+                        </Link>
+                    </div>
+                }
             </div>
         </nav>
     )

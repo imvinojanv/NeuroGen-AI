@@ -18,6 +18,7 @@ import {
 
 import { cn } from '@/lib/utils';
 import FreeCounter from '@/components/free-counter';
+import { Badge } from "@/components/ui/badge";
 
 const montserrat = Montserrat({
     weight: "600",
@@ -80,7 +81,7 @@ function Sidebar({
     const pathname = usePathname();
 
   return (
-    <div className='space-y-4 py-4 flex flex-col h-full bg-[#111827] text-white'>
+    <div className='space-y-4 py-4 flex flex-col h-full bg-[#202025] text-white'>
         <div className='px-3 py-2 flex-1'>
             <Link href="/dashboard" className='flex items-center pl-3 mb-14'>
                 <div className='relative w-8 h-8 mr-4'>
@@ -93,6 +94,11 @@ function Sidebar({
                 <h1 className={cn("text-2xl font-bold", montserrat.className)}>
                     NeuroGen
                 </h1>
+                {isPremium && 
+                    <Badge variant="premium" className="text-[10px] py-1 border-none ml-2 mt-1 tracking-wider">
+                        Premium
+                    </Badge>
+                }
             </Link>
             <div className='space-y-1'>
                 {routes.map((route) => (
@@ -100,7 +106,7 @@ function Sidebar({
                         href={route.href}
                         key={route.href}
                         className={cn(
-                            'text-sm group flex p-3 w-full justify-start font-medium cursor-pointer hover:text-white hover:bg-white/10 rounded-lg transition',
+                            'text-sm group flex p-3 w-full justify-start font-medium cursor-pointer hover:text-white hover:bg-white/5 rounded-lg transition',
                             // for the active page section
                             pathname === route.href ? 'text-white bg-white/10' : 'text-zinc-400'
                         )}

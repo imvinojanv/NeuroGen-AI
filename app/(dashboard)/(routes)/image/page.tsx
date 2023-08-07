@@ -80,7 +80,7 @@ const ImagePage = () => {
                     <form
                         onSubmit={form.handleSubmit(onSubmit)}
                         className="
-                            rounded-lg border w-full p-4 px-3 md:px-6 focus-within:shadow-sm grid grid-cols-12 gap-2
+                            rounded-lg border border-[rgba(56,56,58,.6)] bg-[#202025] w-full p-4 px-3 md:px-6 focus-within:shadow-sm grid grid-cols-12 gap-2
                         "
                     >
                         <FormField
@@ -89,7 +89,7 @@ const ImagePage = () => {
                                 <FormItem className='col-span-12 lg:col-span-6'>
                                     <FormControl className='m-0 p-0'>
                                         <Input 
-                                            className='border-0 outline-none focus-visible:ring-0 focus-visible:ring-transparent'
+                                            className='border-0 bg-[#202025] outline-none focus-visible:ring-0 focus-visible:ring-transparent'
                                             disabled={isLoading}
                                             placeholder='A picture of a horse in Swiss alps'
                                             {...field}
@@ -183,7 +183,7 @@ const ImagePage = () => {
                     {images.map((src) => (
                         <Card
                             key={src}
-                            className="rounded-lg overflow-hidden"
+                            className="rounded-lg overflow-hidden bg-[#202025] border-[rgba(56,56,58,.6)]"
                         >
                             <div className='relative aspect-square'>
                                 <Image 
@@ -195,7 +195,7 @@ const ImagePage = () => {
                             <CardFooter className='p-2'>
                                 <Button 
                                     variant="secondary" 
-                                    className='w-full'
+                                    className='w-full bg-[#171719] border border-[rgba(56,56,58,.6)] hover:border-white/50 hover:bg-[#171719] text-white'
                                     onClick={() => window.open(src)}
                                 >
                                     <Download className='h-4 w-4 mr-2' />

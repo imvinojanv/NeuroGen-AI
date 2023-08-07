@@ -28,8 +28,8 @@ function MobileSidebar({
   return (
     <Sheet>
         <SheetTrigger>
-            <Button variant="ghost" size="icon" className="md:hidden">
-                <Menu />
+            <Button variant="darkBtn" size="icon" className="md:hidden">
+                <Menu color="#fff" />
             </Button>
         </SheetTrigger>
         <SheetContent side="left" className="p-0">

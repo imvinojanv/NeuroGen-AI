@@ -32,7 +32,7 @@ const FreeCounter = ({
 
   return (
     <div className="px-3">
-        <Card className="bg-white/10 border-0">
+        <Card className="bg-[#202025] border-[rgba(56,56,58,.6)]">
             <CardContent className="py-6">
                 <div className="text-center text-sm text-white mb-4 space-y-2">
                     <p>
