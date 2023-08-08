@@ -4,8 +4,8 @@ import Link from "next/link"
 
 export const LandingFooter = () => {
     return (
-        <div className="flex justify-between items-center px-4">
-            <p className="text-zinc-400 text-sm">
+        <div className="flex justify-between flex-col md:flex-row items-center px-4">
+            <p className="text-zinc-400 text-sm mb-2 md:mb-0">
                 Copyright © 2023 <span className="font-semibold">NeuroGen AI</span>. All rights reserved.
             </p>
             <p className="text-zinc-400 text-sm">

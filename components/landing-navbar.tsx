@@ -39,7 +39,7 @@ export const LandingNavbar = () => {
                     </Link>
                 :
                     <div className="flex items-center justify-center gap-4">
-                        <Link href='sign-in'>
+                        <Link className="hidden md:block lg:block" href='sign-in'>
                             <Button variant='link' className={cn("text-md rounded-full bg-transperant text-white md:px-8", montserrat.className)}>
                                 Sign in
                             </Button>

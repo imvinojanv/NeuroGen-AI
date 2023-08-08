@@ -155,3 +155,17 @@
     Create a component as landing-content.tsx
 
 -   Redesign the application
+
+-   Add "postinstall" into package.json
+    run 'npm run lint' to check if there any error in our application (make sure to push the code)
+    Build the application on Vercel
+    Add endpoint on Stripe dashboad (https://neurogen-ai.vercel.app/api/webhook)
+        select events: checkout.session.completed, invoice.payment_succeeded
+        (All the events according to what we are using for our application)
+    After added the endpoint, Copy the "Signing secret" and page it as evn valiable of "STRIPE_WEBHOOK_SECRET" in Vercel
+    change the "NEXT_PUBLIC_APP_URL" as https://neurogen-ai.vercel.app
+    Go to the Deployment and Redeploy the App (Vercel)
+
+    To Renew the application, I am gonna reset my database, So
+    npx prisma migrate reset
+    npx prisma db push
